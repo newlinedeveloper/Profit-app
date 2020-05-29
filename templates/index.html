@@ -52,6 +52,10 @@
 					<span class="ui center aligned blue header">
 						Output Fields
 					</span>
+
+					<div id="output">
+						
+					</div>
 				</div>
 			</div>
 		</div>
@@ -59,6 +63,52 @@
 
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-	 <script type="text/javascript" src="main.js"></script>
+	 <script type="text/javascript" src="{{url_for('static', filename='main.js')}}"></script>
+	 <!-- <script type="text/javascript">
+
+	 	$(document).ready(function(){
+
+		alert("opened");
+
+		$("#submit").click(function(){
+
+			var username = $('#username').val();
+			var email = $('#email').val();
+			var phone = $('#phone').val();
+			var password = $('#password').val();
+
+			console.log("Username : "+username+"\nemail: "+email+"\nPhone : "+phone+"\nPassword : "+password);
+
+			$.ajax({
+				url : "/entreprenuer",
+				type : "POST",
+				data : {
+
+					username : username,
+					email : email,
+					phone : phone,
+					password : password,
+				},
+
+				success : function(data)
+				{
+					console.log("Transferred successfully");
+
+					$("#username").val("");
+					$("#email").val("");
+					$("#phone").val("");
+					$("#password").val("");
+				},
+
+				error : function(err){
+
+					console.log("err : "+err);
+				}
+
+			});
+
+		})
+	})
+	 </script> -->
 </body>
 </html>

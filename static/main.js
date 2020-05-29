@@ -10,28 +10,27 @@ $(document).ready(function(){
 		var password = $('#password').val();
 
 		console.log("Username : "+username+"\nemail: "+email+"Phone : "+phone+"\nPassword : "+password);
-
+		console.log("ok");
 		$.ajax({
-			url : "/entreprenuer",
+			url : "/response",
 			type : "POST",
-			data : {
+			// data : {
 
-				username : username,
-				email : email,
-				phone : phone,
-				password : password,
-			},
+			// 	username : username,
+			// 	email : email,
+			// 	phone : phone,
+			// 	password : password,
+			// },
+			data : $('form').serialize(),
 
 			success : function(data)
 			{
-				console.log("Transferred successfully");
+				console.log("Transfered successfully");
 
 				$("#username").val("");
 				$("#email").val("");
 				$("#phone").val("");
 				$("#password").val("");
-
-				$("#output").html(data);
 			},
 
 			error : function(err){
